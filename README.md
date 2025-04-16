@@ -1,93 +1,59 @@
-#Clustering-Based Pairs Trading Strategy
-This project explores Pairs Trading by applying unsupervised machine learning clustering algorithms on S&P 500 stock data. The goal is to identify statistically correlated stock pairs using various clustering methods and apply cointegration techniques to build a trading strategy.
+# 📊 Clustering-Based Pairs Trading Strategy
 
-📁 Contents
-1. Problem Definition
+This project explores **Pairs Trading** using **unsupervised machine learning clustering algorithms** applied to S&P 500 stock data. The goal is to identify statistically correlated stock pairs suitable for mean-reversion strategies.
 
-2. Data & Libraries
+---
 
-3. Exploratory Data Analysis (EDA)
+## 🧠 Problem Statement
 
-4. Data Preparation
+We aim to discover stock pairs for a pairs trading strategy using clustering methods such as:
 
-5. Clustering Models
+- K-Means Clustering
+- Hierarchical (Agglomerative) Clustering
+- Affinity Propagation
 
-6. Pair Selection
+Once the pairs are formed, **cointegration tests** are used to verify if the stocks are suitable for trading.
 
-7. Conclusion
+---
 
-🔍 Problem Definition
-The objective is to perform clustering analysis on S&P 500 stock price data and identify pairs of stocks suitable for a mean-reverting pairs trading strategy.
+## 📈 Workflow
 
-📦 Data & Libraries
-Data Source: Yahoo Finance (via pandas_datareader)
+### 1. Data Loading
+- Load S&P 500 historical prices (2018 onward) from Yahoo Finance
 
-Time Frame: From 2018 onwards
+### 2. Data Preparation
+- Clean missing values
+- Normalize the price data using `StandardScaler`
 
-Libraries Used:
+### 3. Clustering Techniques
+- **K-Means**:
+  - Determine optimal clusters using the elbow method
+  - Visualize clusters
+- **Hierarchical Clustering**:
+  - Generate dendrogram
+  - Cluster stocks based on linkage distance
+- **Affinity Propagation**:
+  - Automatically detects the number of clusters
 
-pandas, numpy, matplotlib, seaborn
+### 4. Cointegration & Pair Selection
+- Select pairs within the same cluster
+- Test for cointegration
+- Visualize price spreads of selected pairs
 
-scikit-learn, scipy
+---
 
-pandas_datareader for financial data
+## 📌 Key Takeaways
 
-statsmodels (likely used later for cointegration, not shown here)
+- Clustering helps in reducing the universe of stocks to a manageable set of similar candidates.
+- Cointegration testing improves the statistical validity of selected trading pairs.
+- The approach lays the foundation for implementing a complete pairs trading strategy, including backtesting and execution.
 
-📊 Exploratory Data Analysis (EDA)
-View dataset shape and summary statistics
+---
 
-Visualize stock price movements
+## 🚀 Future Work
 
-Understand variance and trends in prices
+- Add statistical backtesting of trading signals
+- Implement strategy execution and performance metrics
+- Integrate DBSCAN and other clustering models
 
-🔧 Data Preparation
-Cleaning missing data
-
-Standardizing the dataset using StandardScaler
-
-Transforming the time series data for clustering models
-
-📈 Clustering Models
-Implemented clustering techniques include:
-
-1. K-Means Clustering
-Finding optimal clusters using the elbow method
-
-Visualizing clusters using dimensionality reduction (e.g., PCA/t-SNE)
-
-2. Hierarchical Clustering
-Creating dendrograms
-
-Using agglomerative clustering with different linkage methods
-
-3. Affinity Propagation
-Clusters without specifying the number of clusters
-
-Visualizing pairwise similarities and responsibilities
-
-4. Evaluation Metrics
-Adjusted Mutual Information
-
-Cophenetic correlation (for hierarchical)
-
-🔗 Pair Selection
-Cointegration Testing: Check statistical correlation for selected pairs
-
-Visualization: Compare price movements of selected pairs
-
-Pair Selection Criteria: Based on cluster membership and cointegration test results
-
-✅ Conclusion
-This project successfully:
-
-Applies unsupervised clustering to group similar stocks
-
-Selects cointegrated pairs for statistical arbitrage
-
-Lays the foundation for backtesting a trading strategy
-
-📂 Files
-ClusteringForPairsTrading.ipynb: Main Jupyter notebook
-
-SP500Data.csv: Price dataset for S&P 500 stocks (loaded externally)
+---
