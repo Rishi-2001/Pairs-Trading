@@ -1,10 +1,10 @@
-# 📊 Clustering-Based Pairs Trading Strategy
+# Clustering-Based Pairs Trading Strategy
 
 This project explores **Pairs Trading** using **unsupervised machine learning clustering algorithms** applied to S&P 500 stock data. The goal is to identify statistically correlated stock pairs suitable for mean-reversion strategies.
 
 ---
 
-## 🧠 Problem Statement
+## Problem Statement
 
 We aim to discover stock pairs for a pairs trading strategy using clustering methods such as:
 
@@ -16,7 +16,7 @@ Once the pairs are formed, **cointegration tests** are used to verify if the sto
 
 ---
 
-## 📈 Workflow
+## Workflow
 
 ### 1. Data Loading
 - Load S&P 500 historical prices (2018 onward) from Yahoo Finance
@@ -42,7 +42,7 @@ Once the pairs are formed, **cointegration tests** are used to verify if the sto
 
 ---
 
-## 📌 Key Takeaways
+## Key Takeaways
 
 - Clustering helps in reducing the universe of stocks to a manageable set of similar candidates.
 - Cointegration testing improves the statistical validity of selected trading pairs.
@@ -50,7 +50,7 @@ Once the pairs are formed, **cointegration tests** are used to verify if the sto
 
 ---
 
-## 🚀 Future Work
+## Future Work
 
 - Add statistical backtesting of trading signals
 - Implement strategy execution and performance metrics
