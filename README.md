@@ -19,7 +19,7 @@ Once the pairs are formed, **cointegration tests** are used to verify if the sto
 ## Workflow
 
 ### 1. Data Loading
-- Load S&P 500 historical prices (2018-01-01 - 2019-10-13) from Yahoo Finance
+- Load S&P 500 historical prices (2018-01-01 to 2019-10-13) from Yahoo Finance
 
 ### 2. Data Preparation
 - Clean missing values
